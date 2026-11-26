@@ -1,1 +1,38 @@
+name: Extract Android Source ZIP
+
+'on':
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Extract uploaded source ZIP
+        shell: bash
+        run: |
+          set -e
+          ZIP_FILE=$(find . -maxdepth 1 -type f -iname '*.zip' | head -n 1)
+          if [ -z "$ZIP_FILE" ]; then
+            echo "No ZIP file found in repository root."
+            exit 1
+          fi
+          mkdir -p extracted_source
+          unzip -q "$ZIP_FILE" -d extracted_source
+          cp -a extracted_source/. .
+          rm -rf extracted_source
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app build.gradle settings.gradle gradle.properties README-BN.md
+          if git diff --cached --quiet; then
+            echo "No source changes to commit."
+          else
+            git commit -m "Add Android source project files"
+            git push
+          fi
 

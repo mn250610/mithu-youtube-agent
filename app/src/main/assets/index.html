@@ -1,63 +1,61 @@
 <!doctype html>
-<html lang="bn">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101126">
-<title>Mithu YouTube Agent</title>
+<html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#101126"><title>Mithu YouTube Agent</title>
 <style>
-:root{--bg:#0d1022;--panel:#171b35;--panel2:#202647;--text:#f5f6ff;--muted:#aab1d0;--purple:#8b72ff;--cyan:#52d7d0;--line:#30385e}
-*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#11152d,#0b0d1b 65%);color:var(--text);font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif}
-header{padding:24px 18px 18px;background:radial-gradient(ellipse at top right,#43318b 0,transparent 60%)}
-.brand{font-size:12px;letter-spacing:1.8px;color:#c7bdff;font-weight:700}.hero{font-size:25px;font-weight:800;margin:8px 0 4px}.sub{font-size:13px;color:var(--muted);line-height:1.6}
-.wrap{padding:0 16px 28px;max-width:760px;margin:auto}.status{display:flex;gap:8px;align-items:center;margin:8px 0 16px}.pill{border:1px solid #3e4771;border-radius:30px;padding:6px 10px;font-size:11px;color:#d9dcff;background:#1a2040}.dot{width:7px;height:7px;background:#f3c969;border-radius:50%;display:inline-block;margin-right:5px}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:11px}.card{background:linear-gradient(145deg,var(--panel),#14182e);border:1px solid var(--line);border-radius:16px;padding:15px;min-width:0}.wide{grid-column:1/-1}.icon{font-size:22px}.card h3{font-size:14px;margin:8px 0 5px}.card p{font-size:12px;color:var(--muted);line-height:1.55;margin:0}.section{font-size:15px;margin:23px 2px 11px;font-weight:750}.btn{border:0;border-radius:12px;padding:12px 14px;font-weight:700;color:white;background:linear-gradient(100deg,#755cf2,#9a69ef);width:100%;font-size:13px;margin-top:12px}.btn.secondary{background:#262d50;border:1px solid #424d7a}.btn:active{transform:scale(.99)}.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-bottom:1px solid var(--line)}.row:last-child{border:0}.row strong{font-size:13px}.row small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.switch{width:44px;height:25px;border-radius:20px;background:#414968;position:relative;flex-shrink:0}.switch:after{content:"";position:absolute;width:19px;height:19px;left:3px;top:3px;background:white;border-radius:50%;transition:.2s}.switch.on{background:#765cf0}.switch.on:after{left:22px}.notice{border:1px solid #6c5a2b;background:#2b2619;color:#f5dfa0;border-radius:12px;padding:12px;font-size:12px;line-height:1.55;margin-top:14px}.tabs{display:flex;gap:8px;overflow:auto;margin:18px 0}.tab{white-space:nowrap;background:#1c2240;border:1px solid var(--line);padding:9px 12px;border-radius:22px;color:#cdd2f1;font-size:12px}.tab.active{background:#6c55df;color:white}.hidden{display:none}.field{width:100%;padding:12px;border-radius:10px;background:#0e1329;border:1px solid #3a4268;color:white;margin-top:8px}.foot{text-align:center;color:#7e87ae;font-size:10px;padding:22px}
-</style>
-</head>
-<body>
-<header><div class="brand">MITHU LABS · CREATOR AUTOMATION</div><div class="hero">Mithu YouTube Agent</div><div class="sub">তোমার YouTube চ্যানেলের জন্য AI-সহায়ক কন্ট্রোল সেন্টার</div></header>
+:root{--bg:#0d1022;--panel:#171b35;--text:#f5f6ff;--muted:#aab1d0;--purple:#8b72ff;--line:#30385e}
+*{box-sizing:border-box}body{margin:0;background:linear-gradient(160deg,#11152d,#0b0d1b 70%);color:var(--text);font-family:system-ui,"Noto Sans Bengali",sans-serif}
+header{padding:23px 18px 16px;background:radial-gradient(ellipse at top right,#43318b 0,transparent 60%)}.brand{font-size:11px;letter-spacing:1.6px;color:#c7bdff;font-weight:700}.hero{font-size:24px;font-weight:800;margin:7px 0}.sub{font-size:12px;color:var(--muted)}
+.wrap{max-width:760px;margin:auto;padding:0 15px 28px}.topnav{display:flex;gap:8px;margin:15px 0;overflow:auto}.nav{border:1px solid var(--line);background:#1b2140;color:#dce0ff;padding:10px 14px;border-radius:22px;white-space:nowrap;font-size:12px}.nav.active{background:#7258e9;color:white}
+.page{display:none}.page.active{display:block}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.card{background:linear-gradient(145deg,#191e39,#14182e);border:1px solid var(--line);border-radius:15px;padding:14px;margin-bottom:11px}.card h3{font-size:14px;margin:6px 0}.card p,.hint{font-size:11px;color:var(--muted);line-height:1.55}.emoji{font-size:22px}.section{font-size:15px;font-weight:750;margin:17px 2px 10px}.btn{border:0;border-radius:11px;padding:12px 14px;font-weight:700;color:white;background:linear-gradient(100deg,#755cf2,#9a69ef);font-size:13px;width:100%;margin-top:9px}.btn.secondary{background:#252d50;border:1px solid #414b76}.field{width:100%;background:#0e1329;border:1px solid #3a4268;border-radius:10px;padding:11px;color:white;margin:6px 0 10px;font-size:13px}.label{font-size:12px;color:#dce0ff;display:block;margin-top:8px}.row{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-bottom:1px solid var(--line)}.row:last-child{border:0}.switch{width:43px;height:24px;border-radius:20px;background:#414968;position:relative;flex-shrink:0}.switch:after{content:"";position:absolute;width:18px;height:18px;left:3px;top:3px;background:white;border-radius:50%}.switch.on{background:#765cf0}.switch.on:after{left:22px}.badge{font-size:10px;background:#292e51;border:1px solid #424a72;padding:5px 8px;border-radius:20px;color:#d9ddff}.notice{background:#2b2619;border:1px solid #6c5a2b;color:#f5dfa0;border-radius:10px;padding:10px;font-size:11px;line-height:1.5;margin:9px 0}.hidden{display:none}.status{font-size:11px;color:#9ee6c5;margin-top:8px}.foot{text-align:center;color:#7780a8;font-size:10px;padding:20px}
+</style></head><body>
+<header><div class="brand">MITHU LABS · CREATOR TOOLS</div><div class="hero">Mithu YouTube Agent</div><div class="sub">তোমার YouTube চ্যানেলের কন্ট্রোল সেন্টার · Version 1.1.0</div></header>
 <div class="wrap">
-<div class="status"><span class="pill"><span class="dot"></span>প্রাথমিক সংস্করণ · 1.0.0</span><span class="pill">Android</span></div>
+<nav class="topnav"><button class="nav active" data-page="home">Dashboard</button><button class="nav" data-page="settings">Settings</button><button class="nav" data-page="about">About</button></nav>
+<section id="home" class="page active">
 <div class="grid">
-<div class="card"><div class="icon">✍️</div><h3>গল্প ও স্ক্রিপ্ট</h3><p>বাংলা রহস্য, ভৌতিক ও আবেগের Shorts স্ক্রিপ্টের প্রস্তুতি।</p><button class="btn" onclick="showInfo('Story Generator','AI API সংযোগ এখনো করা হয়নি। পরবর্তী ধাপে AI provider যুক্ত হবে।')">শুরু করো</button></div>
-<div class="card"><div class="icon">🎬</div><h3>Shorts Studio</h3><p>ভিডিও, সাবটাইটেল, ভয়েস ও এডিটিং পাইপলাইন।</p><button class="btn secondary" onclick="showInfo('Shorts Studio','ভিডিও রেন্ডারিং ইঞ্জিন পরবর্তী ধাপে যুক্ত হবে।')">Studio খোলো</button></div>
-<div class="card"><div class="icon">🎙️</div><h3>বাংলা AI Voice</h3><p>বাংলা ভয়েস তৈরি ও অডিও ব্যবস্থাপনা।</p><button class="btn secondary" onclick="showInfo('Voice Engine','ভয়েস provider/API এখনো সংযুক্ত নয়।')">Voice সেটআপ</button></div>
-<div class="card"><div class="icon">📊</div><h3>Channel Analytics</h3><p>ভিউ ও দর্শক ধরে রাখার তথ্য বিশ্লেষণ।</p><button class="btn secondary" onclick="showInfo('Analytics','YouTube OAuth ও Analytics API সংযোগের পর তথ্য দেখাবে।')">বিশ্লেষণ</button></div>
+<div class="card"><div class="emoji">✍️</div><h3>গল্প ও স্ক্রিপ্ট</h3><p>বাংলা রহস্য, ভৌতিক ও আবেগের গল্পের প্রস্তুতি।</p><button class="btn" onclick="alert('AI Provider ও API সংযোগ যোগ করার পর গল্প তৈরি চালু হবে।')">Story Studio</button></div>
+<div class="card"><div class="emoji">🎬</div><h3>Shorts Studio</h3><p>ভিডিও তৈরির সেটিংস ও পরিকল্পনা।</p><button class="btn secondary" onclick="go('settings')">Video Settings</button></div>
+<div class="card"><div class="emoji">🎙️</div><h3>বাংলা Voice</h3><p>ভয়েস সেবা সংযুক্তির প্রস্তুতি।</p><button class="btn secondary" onclick="go('settings')">Voice Settings</button></div>
+<div class="card"><div class="emoji">📊</div><h3>Analytics</h3><p>YouTube সংযোগের পর চ্যানেল ডেটা দেখাবে।</p><button class="btn secondary" onclick="go('settings')">Channel Setup</button></div>
 </div>
-<div class="section">Agent Control</div>
-<div class="card">
-<div class="row"><div><strong>Upload Mode</strong><small id="modeText">Manual Approval</small></div><span class="pill" id="modePill">অনুমোদন প্রয়োজন</span></div>
-<div class="row"><div><strong>Manual Approval</strong><small>প্রকাশের আগে তোমার অনুমতি নেবে</small></div><div class="switch on" id="manualSwitch" onclick="setMode('manual')"></div></div>
-<div class="row"><div><strong>Auto Upload</strong><small>নির্ধারিত নিয়মে প্রকাশের অনুমতি</small></div><div class="switch" id="autoSwitch" onclick="setMode('auto')"></div></div>
-<div class="notice">নিরাপত্তা: Auto Upload চালুর আগে YouTube অ্যাকাউন্ট OAuth দিয়ে সংযোগ করতে হবে। এই প্রাথমিক সংস্করণ এখনো ভিডিও আপলোড করে না।</div>
+<div class="section">Upload Control</div><div class="card">
+<div class="row"><div><b>Upload Mode</b><div class="hint" id="modeLabel">Manual Approval</div></div><span class="badge" id="modeBadge">Approval required</span></div>
+<div class="row"><span>Manual Approval</span><div class="switch" id="manualToggle" onclick="setMode('manual')"></div></div>
+<div class="row"><span>Auto Upload</span><div class="switch" id="autoToggle" onclick="setMode('auto')"></div></div>
+<div class="notice">এই সংস্করণে Mode নির্বাচন ও সংরক্ষণ কাজ করে। বাস্তব YouTube Upload চালু করতে OAuth ও YouTube API সংযোগ এখনো প্রয়োজন।</div>
+</div></section>
+<section id="settings" class="page">
+<div class="section">⚙️ General Settings</div><div class="card">
+<label class="label">Channel Name</label><input class="field" id="channelName" placeholder="গল্পের রহস্য">
+<label class="label">Daily Shorts Goal</label><select class="field" id="dailyGoal"><option value="1">১টি ভিডিও</option><option value="2">২টি ভিডিও</option><option value="3">৩টি ভিডিও</option></select>
+<label class="label">Video Length</label><select class="field" id="videoLength"><option value="30">৩০ সেকেন্ড</option><option value="45">৪৫ সেকেন্ড</option><option value="60">৬০ সেকেন্ড</option></select>
 </div>
-<div class="section">Quick Setup</div>
-<div class="card">
-<div class="row"><div><strong>YouTube Channel</strong><small id="channelStatus">এখনো সংযুক্ত নয়</small></div><span class="pill">Disconnected</span></div>
-<button class="btn" onclick="showInfo('YouTube Connection','পরবর্তী ধাপে Google OAuth 2.0 সংযোগ যুক্ত হবে। কখনো Google পাসওয়ার্ড অ্যাপে দেবে না।')">চ্যানেল সংযোগ সেটআপ</button>
+<div class="section">🤖 AI Provider Settings</div><div class="card">
+<label class="label">AI Provider</label><select class="field" id="provider"><option value="Gemini">Google Gemini</option><option value="OpenAI">OpenAI</option><option value="Custom">Custom API</option></select>
+<label class="label">Model Name</label><input class="field" id="modelName" placeholder="যেমন: gemini model name">
+<label class="label">API Key</label><input class="field" id="apiKey" type="password" placeholder="API Key এখানে লিখবে">
+<button class="btn secondary" onclick="toggleKey()">API Key দেখাও / লুকাও</button>
+<div class="notice">সতর্কতা: এই প্রাথমিক সংস্করণে Key এই ডিভাইসের WebView স্থানীয় স্টোরেজে সংরক্ষিত হবে; এটি encrypted vault নয়। GitHub-এ বা অন্য কাউকে Key পাঠাবে না।</div>
 </div>
-<div class="section">Settings</div>
-<div class="card">
-<div class="row"><div><strong>দৈনিক Shorts লক্ষ্য</strong><small>প্রতিদিন কতটি ভিডিও তৈরি করবে</small></div><select class="field" style="width:90px;margin:0" id="dailyGoal" onchange="saveGoal()"><option>1</option><option>2</option><option>3</option></select></div>
-<div class="row"><div><strong>চ্যানেলের নাম</strong><small>তোমার YouTube চ্যানেল</small></div><input id="channelName" class="field" style="max-width:145px;margin:0" value="গল্পের রহস্য" onchange="localStorage.setItem('channelName',this.value)"></div>
-<div class="row"><div><strong>Content Theme</strong><small>রহস্য + ভৌতিক + আবেগ</small></div><span class="pill">বাংলা</span></div>
-<button class="btn secondary" onclick="showInfo('Settings','তোমার পছন্দ এই ডিভাইসের অ্যাপে সংরক্ষিত হয়।')">সেটিংস তথ্য</button>
+<div class="section">📺 YouTube Settings</div><div class="card">
+<div class="row"><div><b>YouTube Account</b><div class="hint" id="ytStatus">এখনো সংযুক্ত নয়</div></div><span class="badge">Not connected</span></div>
+<p class="hint">Google OAuth সংযোগ এখনো বাস্তবায়িত হয়নি। API Key দিয়ে নিজের চ্যানেলে আপলোড করা যায় না; OAuth consent লাগবে।</p>
 </div>
-<div class="foot">Mithu YouTube Agent · Version 1.0.0<br>Prototype dashboard — API integrations pending</div>
+<div class="section">🔊 Voice & Video Settings</div><div class="card">
+<label class="label">Voice Language</label><select class="field" id="voiceLang"><option value="bn-BD">বাংলা (বাংলাদেশ)</option><option value="bn-IN">বাংলা (ভারত)</option></select>
+<label class="label">Background Music</label><select class="field" id="music"><option value="on">চালু</option><option value="off">বন্ধ</option></select>
+</div>
+<button class="btn" onclick="saveSettings()">Save Settings</button><button class="btn secondary" onclick="loadSettings()">Reload Saved Settings</button><div id="saveStatus" class="status"></div>
+</section>
+<section id="about" class="page"><div class="section">About this build</div><div class="card"><h3>Mithu YouTube Agent 1.1.0</h3><p>এই build-এ Settings page, upload mode switch ও local preferences সংরক্ষণ কাজ করে। AI generation, TTS, video rendering এবং YouTube OAuth/upload এখনো সংযুক্ত নয়।</p><p class="hint">API Key স্থানীয় WebView storage-এ plaintext হিসেবে থাকে। Production ব্যবহারের আগে Android Keystore-backed secure storage বা trusted backend যোগ করতে হবে।</p></div></section>
+<div class="foot">Mithu YouTube Agent · Android · v1.1.0</div>
 </div>
 <script>
-function setMode(mode){
- localStorage.setItem('uploadMode',mode);
- document.getElementById('manualSwitch').classList.toggle('on',mode==='manual');
- document.getElementById('autoSwitch').classList.toggle('on',mode==='auto');
- document.getElementById('modeText').textContent=mode==='manual'?'Manual Approval':'Auto Upload';
- document.getElementById('modePill').textContent=mode==='manual'?'অনুমোদন প্রয়োজন':'Auto mode নির্বাচিত';
-}
-function saveGoal(){localStorage.setItem('dailyGoal',document.getElementById('dailyGoal').value)}
-function showInfo(title,msg){alert(title+'\n\n'+msg)}
-(function(){
- setMode(localStorage.getItem('uploadMode')||'manual');
- document.getElementById('dailyGoal').value=localStorage.getItem('dailyGoal')||'1';
- document.getElementById('channelName').value=localStorage.getItem('channelName')||'গল্পের রহস্য';
-})();
-</script>
-</body></html>
+const ids=['channelName','dailyGoal','videoLength','provider','modelName','apiKey','voiceLang','music'];
+function go(p){document.querySelectorAll('.page').forEach(x=>x.classList.toggle('active',x.id===p));document.querySelectorAll('.nav').forEach(x=>x.classList.toggle('active',x.dataset.page===p));}
+document.querySelectorAll('.nav').forEach(b=>b.addEventListener('click',()=>go(b.dataset.page)));
+function setMode(m){localStorage.setItem('uploadMode',m);document.getElementById('manualToggle').classList.toggle('on',m==='manual');document.getElementById('autoToggle').classList.toggle('on',m==='auto');document.getElementById('modeLabel').textContent=m==='manual'?'Manual Approval':'Auto Upload';document.getElementById('modeBadge').textContent=m==='manual'?'Approval required':'Auto mode selected';}
+function saveSettings(){ids.forEach(id=>localStorage.setItem('setting_'+id,document.getElementById(id).value));document.getElementById('saveStatus').textContent='✓ Settings এই ডিভাইসে সংরক্ষণ হয়েছে।';}
+function loadSettings(){ids.forEach(id=>{const v=localStorage.getItem('setting_'+id);if(v!==null)document.getElementById(id).value=v;});document.getElementById('saveStatus').textContent='Saved settings লোড হয়েছে।';}
+function toggleKey(){const x=document.getElementById('apiKey');x.type=x.type==='password'?'text':'password';}
+(function(){setMode(localStorage.getItem('uploadMode')||'manual');loadSettings();if(!localStorage.getItem('setting_channelName'))document.getElementById('channelName').value='গল্পের রহস্য';})();
+</script></body></html>

@@ -1,22 +1,18 @@
-# Mithu YouTube Agent — Android APK 1.0.0
+# Mithu YouTube Agent v1.1.0
 
-এটি একটি Android WebView অ্যাপের প্রাথমিক ভিত্তি। এতে Dashboard, Manual Approval/Auto Upload mode switch এবং স্থানীয় Settings সংরক্ষণের UI আছে।
+## এই সংস্করণে কাজ করে
+- Dashboard এবং আলাদা Settings পেজ
+- Manual Approval / Auto Upload mode নির্বাচন ও স্থানীয়ভাবে সংরক্ষণ
+- Channel name, দৈনিক Shorts লক্ষ্য, ভিডিও দৈর্ঘ্য
+- AI Provider, Model name ও API Key field
+- Voice language ও background music preference
+- Save Settings / Reload Saved Settings
 
-## গুরুত্বপূর্ণ সীমাবদ্ধতা
-এই build-এ এখনো AI story generation, Bengali TTS, video rendering, Google OAuth, YouTube upload বা Analytics API সংযুক্ত নেই। UI-তে এগুলোকে প্রস্তুত/সংযুক্ত বলে দাবি করা হয়নি। বাস্তব আপলোডের আগে Google OAuth consent, YouTube Data API এবং প্রয়োজনীয় অনুমতি লাগবে। Google পাসওয়ার্ড কখনো অ্যাপে সংগ্রহ করবেন না।
+## এখনো সংযুক্ত নয়
+AI API-তে প্রকৃত request, Bengali TTS, video rendering, Google OAuth, YouTube upload ও Analytics। UI-তে API Key field থাকলেও এটি API-তে কল করে না।
 
-## GitHub দিয়ে APK বানানো (Android ফোন থেকে)
-1. GitHub-এ নতুন Public বা Private repository তৈরি করো, যেমন `mithu-youtube-agent`।
-2. এই ZIP ফাইলটি Extract করো।
-3. Extract করা ফোল্ডারের ভেতরের `settings.gradle`, `build.gradle`, `gradle.properties`, `app` ফোল্ডার ইত্যাদি repository-র root-এ Upload files দিয়ে আপলোড করো।
-4. পরের ধাপে দেওয়া `build-apk.yml` ফাইলের কনটেন্ট GitHub-এ `.github/workflows/build-apk.yml` নামে নতুন ফাইল হিসেবে তৈরি করো।
-5. Commit changes করো। GitHub Actions স্বয়ংক্রিয়ভাবে APK build করবে।
-6. Repository → Actions → সর্বশেষ সফল workflow → Artifacts থেকে `MithuYouTubeAgent-debug-apk` ডাউনলোড করো।
-7. ZIP extract করে APK ইনস্টল করো। ফোনে “Install unknown apps” অনুমতি চাইতে পারে।
+## নিরাপত্তা
+এই prototype-এ API Key Android WebView localStorage-এ plaintext অবস্থায় সংরক্ষিত হয়। Production API key ব্যবহারের আগে Android Keystore-backed encrypted storage বা backend proxy যোগ করতে হবে। GitHub-এ API key commit করবেন না।
 
-## Build details
-- Android application ID: `com.mithu.youtubeagent`
-- Version: `1.0.0` (versionCode 1)
-- Minimum Android: 6.0 (API 23)
-- Compile/Target SDK: 35
-- JDK: 17
+## Build
+GitHub Actions workflow `build-apk.yml` ব্যবহার করুন। Android SDK path runner-এর `ANDROID_HOME` environment থেকে নেওয়া হয়।
